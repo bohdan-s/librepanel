@@ -29,7 +29,6 @@ function dbConnect($username, $password, $database, $host = "localhost")
     return $db;
   } catch(PDOException $ex) {
     echo "An Error occured: " . $ex->getMessage();
-    return false;
   }
   return false;
 }
