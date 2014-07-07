@@ -36,31 +36,43 @@ if ( isset($_GET, $_GET['page'], $_GET['action']) ) {
       echo ('Error Connecting to DB!');
     }
 ?>
-      <div class="container">
+      <div class="container" style="padding: 0px; margin: 0px;">
         <form class="form" role="form">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-3" style="padding: 0px;">Name</div>
+              <div class="col-xs-1" style="padding: 0px; width: 90px;">Type</div>
+              <div class="col-xs-6" style="padding: 0px;">Content</div>
+              <div class="col-xs-1" style="padding: 0px; width: 60px;">Priority</div>
+              <div class="col-xs-1" style="padding: 0px;">TTL</div>
+              <div class="col-xs-1" style="padding: 0px; width: 40px;"></div>
+            </div>
+
+
+
 <?php foreach($db->query('SELECT * FROM records WHERE domain_id="' . $domainid . '"') as $row) {
         $content = htmlentities($row['content']);
         // to undo html_entity_decode($string);
 ?>
           <div class="form-group">
             <div class="row">
-              <div class="col-xs-3" style="padding: 0px;"><input type="text" class="form-control" style="font-size:12px;" value="<?php echo($row['name']); ?>"></div>
-              <div class="col-xs-1" style="padding: 0px; width: 90px;"><select class="form-control" style="font-size:12px;">
+              <div class="col-xs-3" style="padding: 0px;"><input type="text" class="form-control" style="font-size: 12px;" value="<?php echo($row['name']); ?>"></div>
+              <div class="col-xs-1" style="padding: 0px; width: 90px;"><select class="form-control" style="font-size: 12px;">
 <?php   foreach ( $recTypes as $recType ) {
           if ( $recType == $row['type'] ) { ?>
-            <option selected><?php echo($recType); ?></option>
+                <option selected><?php echo($recType); ?></option>
 <?php     } else { ?>
-            <option><?php echo($recType); ?></option>
+                <option><?php echo($recType); ?></option>
 <?php     }
         }  ?>
-            </select></div>
-            <div class="col-xs-6" style="padding: 0px;"><input type="text" class="form-control" style="font-size:12px;" value="<?php echo($content); ?>"></div>
-            <div class="col-xs-1" style="padding: 0px; width: 60px;"><input type="text" class="form-control" style="font-size:12px;" value="<?php echo($row['priority']); ?>"></div>
-            <div class="col-xs-1" style="padding: 0px;"><input type="text" class="form-control" style="font-size:12px;" value="<?php echo($row['ttl']); ?>"></div>
-          </div>
+              </select></div>
+              <div class="col-xs-6" style="padding: 0px;"><input type="text" class="form-control" style="font-size: 12px;" value="<?php echo($content); ?>"></div>
+              <div class="col-xs-1" style="padding: 0px; width: 60px;"><input type="text" class="form-control" style="font-size: 12px;" value="<?php echo($row['priority']); ?>"></div>
+              <div class="col-xs-1" style="padding: 0px;"><input type="text" class="form-control" style="font-size: 12px;" value="<?php echo($row['ttl']); ?>"></div>
+              <div class="col-xs-1" style="padding: 0px; width: 10px;"><span class="glyphicon glyphicon-remove" style="font-size: 14px; color: red;"></span><span class="glyphicon glyphicon-ok" style="font-size: 14px; color: green;" ></span></div>
+            </div>
 <?php } ?>
-        </form>
-      </div>
+          </div>
 <?php
   }
   elseif ( $_GET['action'] === "configuration" ) {

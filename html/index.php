@@ -70,7 +70,7 @@ $config['plugin']['2']['plugin_name'] = "postfix";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php echo($config['site']['page_title']); ?></a>
+          <a class="navbar-brand" href="#"><?php echo($config['site']['page_title']); ?>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
