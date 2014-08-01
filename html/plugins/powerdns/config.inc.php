@@ -35,5 +35,5 @@ if ( isset($config['powerdns']['conf_location']) && is_readable($config['powerdn
 } else {
   echo('Failed to Open File');
 }
-fclose($myfile);
+fclose($fhandle);
 ?>

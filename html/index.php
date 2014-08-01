@@ -62,7 +62,7 @@ $config['plugin']['2']['plugin_name'] = "postfix";
     <script src="js/bootstrap.min.js"></script>
 <?php if ( $authenticated === true ) { ?>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -70,11 +70,11 @@ $config['plugin']['2']['plugin_name'] = "postfix";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php echo($config['site']['page_title']); ?>
+          <a class="navbar-brand" href="#"><?php echo($config['site']['page_title']); ?></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
 <?php
 foreach ($config['plugin'] as $plugin) {
   if ( $plugin['enabled'] === true ) {

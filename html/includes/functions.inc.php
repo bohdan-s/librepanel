@@ -33,8 +33,4 @@ function dbConnect($username, $password, $database, $host = "localhost")
   return false;
 }
 
-//function dbQuery($query, $db)
-//{
-//  foreach($db->query('SELECT * FROM domains') as $row)
-//}
 ?>
